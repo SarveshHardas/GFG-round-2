@@ -1,8 +1,22 @@
-import React from 'react'
+"use client";
+
+import React,{useRef, useEffect} from 'react'
+import gsap from "gsap";
+
 
 const Navbar = () => {
+
+    const navRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if(navRef.current){
+            gsap.from(navRef.current,{
+                y:-100,opacity:0,duration:2,ease:"power3.out"
+            })
+        }
+    }, []);
     return (
-        <div className="flex justify-between items-center px-7 py-4">
+        <div ref={navRef} className="flex justify-between items-center px-7 py-4">
             <div className="text-black text-2xl font-bold font-sans">
                 Read & Rise
             </div>

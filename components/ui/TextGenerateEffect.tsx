@@ -3,7 +3,12 @@ import { useEffect } from "react";
 import { motion, stagger, useAnimate } from "motion/react";
 import { cn } from "@/lib/utils";
 
-export const TextGenerateEffect = ({words, className, filter = true, duration = 0.5,}:{
+export const TextGenerateEffect = ({
+                                       words,
+                                       className,
+                                       filter = true,
+                                       duration = 0.5,
+                                   }: {
     words: string;
     className?: string;
     filter?: boolean;
@@ -23,7 +28,7 @@ export const TextGenerateEffect = ({words, className, filter = true, duration = 
                 delay: stagger(0.2),
             }
         );
-    }, [scope.current]);
+    }, [animate, duration, filter]);
 
     const renderWords = () => {
         return (
@@ -32,7 +37,7 @@ export const TextGenerateEffect = ({words, className, filter = true, duration = 
                     return (
                         <motion.span
                             key={word + idx}
-                            className="dark:text-white text-black opacity-0"
+                            className="dark:text-white text-black"
                             style={{
                                 filter: filter ? "blur(10px)" : "none",
                             }}
@@ -48,7 +53,7 @@ export const TextGenerateEffect = ({words, className, filter = true, duration = 
     return (
         <div className={cn("font-bold", className)}>
             <div className="mt-4">
-                <div className="text-black text-2xl leading-snug tracking-wide">
+                <div className="text-black leading-snug tracking-wide">
                     {renderWords()}
                 </div>
             </div>
