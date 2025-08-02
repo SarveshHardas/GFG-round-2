@@ -25,7 +25,7 @@ const Hero = () => {
                     <p className="text-gray-500 text-sm md:text-xl">
                         Explore thousands of books across<br/>genres and categories.
                     </p>
-                    <TextGenerateEffect className="text-black" words="Shop now"/>
+                    {/*<TextGenerateEffect className="text-black" words="Shop now"/> Work was on progress*/}
                     <form className="flex justify-start items-center gap-3">
                         <input type="text" placeholder="Search by titles, authors or ISB"
                                className="w-fit px-5 py-2 rounded-2xl bg-gray-100 border border-black text-black"
